@@ -2,14 +2,16 @@ import React from "react";
 import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
 import { ApolloProvider } from '@apollo/client';
-import { client } from './services/graphql';
+import { client } from './services/graphql/client';
+import App from './pages/App';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 ReactDOM.render(
     <React.StrictMode>
     <ApolloProvider client={client}>
-      <div>
-        <h2>My first Apollo app 🚀</h2>
-      </div>
+      <App />
     </ApolloProvider>
     </React.StrictMode>,
   document.getElementById("root")
